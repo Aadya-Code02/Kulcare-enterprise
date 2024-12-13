@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
 
 import {
   Sidebar,
@@ -48,28 +47,35 @@ const data = {
     },
   ],
   navMain: [
+    { title: "Home",
+      url: "/Home",
+      icon: SquareTerminal,
+      isActive: true,
+     
+    }
+      ,
     {
-      title: "Playground",
+      title: "Manage Health",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "/History",
+          title: "Provider",
+          url: "/manage-health",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Camp",
+          url: "/manage-health",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Camp",
+          url: "/manage-health",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Manage Wellness",
       url: "#",
       icon: Bot,
       items: [
@@ -88,7 +94,7 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Employees",
       url: "#",
       icon: BookOpen,
       items: [
@@ -111,7 +117,7 @@ const data = {
       ],
     },
     {
-      title: "Settings",
+      title: "Rewards",
       url: "#",
       icon: Settings2,
       items: [
@@ -134,23 +140,7 @@ const data = {
       ],
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -161,7 +151,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenuButton></SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
