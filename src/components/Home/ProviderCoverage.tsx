@@ -1,4 +1,12 @@
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+
 import { Users, Activity, Building2, TestTubes } from "lucide-react";
 
 const coverageData = [
@@ -10,22 +18,35 @@ const coverageData = [
 
 export function ProviderCoverage() {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="gap-4">
       {coverageData.map((item) => (
-        <Card key={item.title} className="p-6">
-          <div className="flex items-center gap-4">
-            <div className={`${item.color} p-2 rounded-lg`}>
-              <item.icon className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">
-                {item.title}
-              </p>
-              <h3 className="text-2xl font-bold">{item.value}</h3>
-            </div>
-          </div>
-        </Card>
+        <div key={item.title} className="m-2">
+          <Card className="p-4 md:p-6 w-full max-w-[312px] h-[141px] ml-9">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <div className={`${item.color} p-2 rounded-lg shrink-0`}>
+                  <item.icon className="h-5 w-5 text-white" />
+                </div>
+                <div className="min-w-0">
+                  <CardTitle className="text-sm font-medium text-muted-foreground truncate">
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription className="text-xl md:text-2xl font-bold">
+                    {item.value}
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {/* You can place additional content here if needed */}
+            </CardContent>
+            <CardFooter>
+              {/* Optionally, add footer content here */}
+            </CardFooter>
+          </Card>
+        </div>
       ))}
     </div>
   );
 }
+

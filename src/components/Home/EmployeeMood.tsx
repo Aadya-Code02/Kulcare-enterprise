@@ -1,4 +1,5 @@
-import { Card } from "@/components/ui/card";
+import React from 'react';
+import { Card } from "../ui/card";
 import { SmilePlus, Heart, Frown } from "lucide-react";
 
 const moodData = [
@@ -27,17 +28,17 @@ const moodData = [
 
 export function EmployeeMood() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 md:space-y-4">
       {moodData.map((item) => (
-        <Card key={item.title} className="p-4">
-          <div className="flex items-center gap-4">
+        <Card key={item.title} className="p-3 md:p-4 w-[362px] h-[119px]">
+          <div className="flex items-center gap-2 md:gap-4">
             <div className="rounded-full bg-gray-100 p-2">
-              <item.icon className={`h-6 w-6 ${item.color}`} />
+              <item.icon className={`h-5 w-5 md:h-6 md:w-6 ${item.color}`} />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{item.title}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{item.title}</p>
               <p className="font-medium">{item.status}</p>
-              <p className="text-sm text-muted-foreground">{item.percentage}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{item.percentage}</p>
             </div>
           </div>
         </Card>
