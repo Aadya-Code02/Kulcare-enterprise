@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { AppSidebar } from "./app-sidebar"
 import {
   Breadcrumb,
@@ -14,7 +15,6 @@ import {
   SidebarTrigger,
 } from "./ui/sidebar"
 import Dropdown from "./dropdown"
-import Home from "./Home/Home"
 
 export function Page() {
   return (
@@ -41,10 +41,11 @@ export function Page() {
           </div>
           <div className="px-4">
             <Dropdown />
-          
           </div>
         </header>
-        <Home />
+        <main className="flex-1 p-4 max-w-[1280px] border bg-gray-100">
+          <Outlet />
+        </main>
       </SidebarInset>
     </SidebarProvider>
   )
